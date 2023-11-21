@@ -1,30 +1,31 @@
-public class Smartphone extends Prodotti {
-    private static int counter = 0; // Static counter for generating unique IDs
-    private int id;
+import java.util.UUID;
+
+public class Smartphone {
+    private UUID id;
     private String item;
     private String manufacturer;
     private String model;
     private double displaySize;
-    private String archiveSpce;
+    private String archiveSpace;
     private double buyingPrice;
     private double sellingPrice;
 
-    public Smartphone (String item, String manufacturer, String model, double displaySize, String archiveSpce, double buyingPrice, double sellingPrice) {
+    public Smartphone (String item, String manufacturer, String model, double displaySize, String archiveSpace, double buyingPrice, double sellingPrice) {
         this.id = generateID();
         this.item = item;
         this.manufacturer = manufacturer;
         this.model = model;
         this.displaySize = displaySize;
-        this.archiveSpce = archiveSpce;
+        this.archiveSpace = archiveSpace;
         this.buyingPrice = buyingPrice;
         this.sellingPrice = sellingPrice;
     }
     // Method to generate a unique ID for the smartphone
-    private int generateID() {
-        return ++counter;
+    private UUID generateID() {
+        return UUID.randomUUID();
     }
-    public int getId() {
-        return id;
+    public String getId() {
+        return id.toString();
     }
     public String getItem() {
         return item;
@@ -39,8 +40,8 @@ public class Smartphone extends Prodotti {
         return displaySize;
     }
 
-    public String getArchiveSpce() {
-        return archiveSpce;
+    public String getArchiveSpace() {
+        return archiveSpace;
     }
 
     public double getBuyingPrice() {
@@ -56,8 +57,9 @@ public class Smartphone extends Prodotti {
         System.out.println("Manufacturer: " + manufacturer);
         System.out.println("Model: " + model);
         System.out.println("Display size: " + displaySize);
-        System.out.println("Archive space: " + archiveSpce);
+        System.out.println("Archive space: " + archiveSpace);
         System.out.println("Buying Price: $" + buyingPrice);
         System.out.println("Selling Price: $" + sellingPrice);
     }
 }
+
