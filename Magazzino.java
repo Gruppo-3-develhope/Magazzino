@@ -1,12 +1,10 @@
-package gruppo3;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 
-public class Magazzino {
+public class Magazzino implements Prodotto {
 
     private ArrayList<Notebook> notebooks = new ArrayList<Notebook>();
     private ArrayList<Smartphone> smartphones = new ArrayList<Smartphone>();
@@ -19,7 +17,6 @@ public class Magazzino {
     BufferedReader bf = new BufferedReader(in);
 
     public void inserimentoNotebook() throws IOException {
-
 
         String item;
         String manufacturer;
@@ -50,6 +47,70 @@ public class Magazzino {
         notebooks.add(nb); // In questo modo l'oggetto creato lo salvo nell'aray list.
     }
 
+
+    public void inserimentoSmartphone() throws IOException {
+
+        String item;
+        String manufacturer;
+        String model;
+        double displaySize;
+        String archiveSpace;
+        double buyingPrice;
+        double sellingPrice;
+
+        System.out.println("Inserisci item");
+        item = bf.readLine();
+        System.out.println("Inserisci azienda produttrice");
+        manufacturer = bf.readLine();
+        System.out.println("Inserisci modello");
+        model = bf.readLine();
+        System.out.println("Inserisci dimensione del display");
+        displaySize = Double.parseDouble(bf.readLine());
+        System.out.println("Inserisci memoria di archiviazione");
+        archiveSpace = bf.readLine();
+        System.out.println("Inserisci prezzo di acquisto");
+        buyingPrice = Double.parseDouble(bf.readLine());
+        System.out.println("Inserisci prezzo di vendita");
+        sellingPrice = Double.parseDouble(bf.readLine());
+
+        Smartphone sm = new Smartphone(item, manufacturer, model, displaySize, archiveSpace
+                , buyingPrice, sellingPrice);
+
+        smartphones.add(sm); // In questo modo l'oggetto creato lo salvo nell'aray list.
+
+    }
+
+    public void inserimentoTablet() throws IOException {
+
+        String item;
+        String manufacturer;
+        String model;
+        double displaySize;
+        String archiveSpace;
+        double buyingPrice;
+        double sellingPrice;
+
+        System.out.println("Inserisci item");
+        item = bf.readLine();
+        System.out.println("Inserisci azienda produttrice");
+        manufacturer = bf.readLine();
+        System.out.println("Inserisci modello");
+        model = bf.readLine();
+        System.out.println("Inserisci dimensione del display");
+        displaySize = Double.parseDouble(bf.readLine());
+        System.out.println("Inserisci memoria di archiviazione");
+        archiveSpace = bf.readLine();
+        System.out.println("Inserisci prezzo di acquisto");
+        buyingPrice = Double.parseDouble(bf.readLine());
+        System.out.println("Inserisci prezzo di vendita");
+        sellingPrice = Double.parseDouble(bf.readLine());
+
+        Tablet tb = new Tablet(item, manufacturer, model, displaySize, archiveSpace
+                , buyingPrice, sellingPrice);
+
+        tablets.add(tb); // In questo modo l'oggetto creato lo salvo nell'array list.
+    }
+
     public void inserimentoProdotto() throws IOException {
         int tipo;
 
@@ -61,20 +122,25 @@ public class Magazzino {
         tipo = Integer.parseInt(bf.readLine());
 
         switch (tipo) {
-            case 1: {
-                inserimentoNotebook();
-            }
-            break;
-            case 2: {
+
+                case 1:
+                    inserimentoNotebook();
+
+                    break;
+
+                case 2:
+                    inserimentoSmartphone();
+
+                    break;
+
+                case 3:
+                    inserimentoTablet();
+
+                    break;
+
+                default: throws new IllegalAccessException("invalid");
 
             }
-            break;
-            case 3: {
-
-            }
-            break;
-
-        }
 
     }
 
