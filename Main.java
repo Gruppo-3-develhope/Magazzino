@@ -79,6 +79,7 @@ public class Main {
             } catch (InputMismatchException e) {
                 System.out.println("Errore: inserisci un numero valido.");
                 scanner.next();
+                System.out.println("ciao");
             }
         }
     }
