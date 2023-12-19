@@ -1,10 +1,8 @@
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 
-public class Magazzino implements Prodotto {
+public class Magazzino implements Prodotti {
 
     private ArrayList<Notebook> notebooks = new ArrayList<Notebook>();
     private ArrayList<Smartphone> smartphones = new ArrayList<Smartphone>();
@@ -167,4 +165,8 @@ public class Magazzino implements Prodotto {
         this.tablets = tablets;
     }
 
+    @Override
+    public void displayInfo() {
+
+    }
 }
