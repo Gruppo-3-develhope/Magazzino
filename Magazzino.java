@@ -13,8 +13,7 @@ public class Magazzino implements Prodotto {
     public Magazzino() {
     }
 
-    InputStreamReader in = new InputStreamReader(System.in);
-    BufferedReader bf = new BufferedReader(in);
+
 
     public void inserimentoNotebook() throws IOException {
 
@@ -26,7 +25,7 @@ public class Magazzino implements Prodotto {
         double buyingPrice;
         double sellingPrice;
 
-        System.out.println("Inserisci item");
+        /*System.out.println("Inserisci item");
         item = bf.readLine();
         System.out.println("Inserisci azienda produttrice");
         manufacturer = bf.readLine();
@@ -39,7 +38,7 @@ public class Magazzino implements Prodotto {
         System.out.println("Inserisci prezzo di acquisto");
         buyingPrice = Double.parseDouble(bf.readLine());
         System.out.println("Inserisci prezzo di vendita");
-        sellingPrice = Double.parseDouble(bf.readLine());
+        sellingPrice = Double.parseDouble(bf.readLine());*/
 
         Notebook nb = new Notebook(item, manufacturer, model, displaySize, archiveSpace
                 , buyingPrice, sellingPrice);
